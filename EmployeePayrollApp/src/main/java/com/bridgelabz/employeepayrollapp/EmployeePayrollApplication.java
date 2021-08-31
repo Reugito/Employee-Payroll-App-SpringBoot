@@ -12,6 +12,6 @@ public class EmployeePayrollApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(EmployeePayrollApplication.class, args);
-	log.info("Employee payroll App Started in ()");
+	log.info("Employee payroll App Started in {}", context.getEnvironment().getProperty("environment"));
 	}
 }
