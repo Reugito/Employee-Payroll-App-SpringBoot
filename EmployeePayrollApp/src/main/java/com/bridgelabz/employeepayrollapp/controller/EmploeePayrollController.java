@@ -50,6 +50,13 @@ public class EmploeePayrollController
 		return new ResponseEntity<ResponseDTO> (respDTO, HttpStatus.OK);
 	}
 	
+	@GetMapping("/dept/{dept}")
+	public ResponseEntity<ResponseDTO> getDepartment(@PathVariable("dept") String dept){
+		List<EmployeePayrollData> empDataList = null;
+		empDataList = employeePayrollService.getEmploreeByDepartment(dept);
+		ResponseDTO respDTO = new ResponseDTO("Get Call Success", empDataList);
+		return new ResponseEntity<ResponseDTO> (respDTO, HttpStatus.OK);
+	}
 	
 	@PostMapping(path = "/create", consumes = {"application/json"})
 	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO empPayrollDTO)
@@ -75,5 +82,6 @@ public class EmploeePayrollController
 		employeePayrollService.deleteEmployeePayrollData(empId);
 		ResponseDTO respDTO = new ResponseDTO("Deleted Employee Data ", empId);
 		return new ResponseEntity<ResponseDTO> (respDTO, HttpStatus.OK);	
-		}
+	}
+	
 }

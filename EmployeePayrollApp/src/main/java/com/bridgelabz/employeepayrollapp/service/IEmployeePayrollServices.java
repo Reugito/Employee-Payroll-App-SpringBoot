@@ -15,4 +15,7 @@ public interface IEmployeePayrollServices {
 	EmployeePayrollData updateEmployeePayrollData(int empId, EmployeePayrollDTO empPayrollDTO);
 	
 	void deleteEmployeePayrollData(int empId);
+	
+	List<EmployeePayrollData> getEmploreeByDepartment(String department);
+	
 }

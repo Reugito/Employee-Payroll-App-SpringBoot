@@ -48,4 +48,9 @@ public class EmployeePayrollService implements IEmployeePayrollServices{
 		EmployeePayrollData empData = this.getEmployeePayrollDataById(empId);
 		employeeReposetory.delete(empData);
 	}
+
+	@Override
+	public List<EmployeePayrollData> getEmploreeByDepartment(String department) {
+		return employeeReposetory.findEmployeeByDepartment(department);
+	}
 }
