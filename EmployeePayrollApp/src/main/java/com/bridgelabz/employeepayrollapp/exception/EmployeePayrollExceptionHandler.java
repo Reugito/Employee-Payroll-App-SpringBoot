@@ -1,4 +1,4 @@
-package com.bridgelabz.employeepayrollapp.Exception;
+package com.bridgelabz.employeepayrollapp.exception;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.bridgelabz.employeepayrollapp.DTO.ResponseDTO;
+import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 
 @ControllerAdvice
 public class EmployeePayrollExceptionHandler {

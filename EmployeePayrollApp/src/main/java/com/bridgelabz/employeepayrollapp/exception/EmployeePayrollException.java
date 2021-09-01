@@ -1,4 +1,4 @@
-package com.bridgelabz.employeepayrollapp.Exception;
+package com.bridgelabz.employeepayrollapp.exception;
 
 public class EmployeePayrollException extends RuntimeException 
 {

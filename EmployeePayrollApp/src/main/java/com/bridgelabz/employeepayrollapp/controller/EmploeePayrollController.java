@@ -14,21 +14,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bridgelabz.employeepayrollapp.DTO.EmployeePayrollDTO;
-import com.bridgelabz.employeepayrollapp.DTO.ResponseDTO;
+import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+import com.bridgelabz.employeepayrollapp.dto.ResponseDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.service.EmployeePayrollService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/employeepayrollservice")
+@Slf4j
 public class EmploeePayrollController 
 {
 	@Autowired
 	private EmployeePayrollService employeePayrollService;
-	
-	@RequestMapping(value = {"","/","/get"})
+
+	@RequestMapping(value = {"","/","/get"}, method = RequestMethod.GET)
 	public ResponseEntity<ResponseDTO> getEmployeePayrollData()
 	{
 		List<EmployeePayrollData> empDataList = null;
@@ -50,6 +54,7 @@ public class EmploeePayrollController
 	@PostMapping(path = "/create", consumes = {"application/json"})
 	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@Valid @RequestBody EmployeePayrollDTO empPayrollDTO)
 	{
+		log.debug("Employee DTO"+empPayrollDTO.toString());
 		EmployeePayrollData employeePayrollData = employeePayrollService.createEmployeePayrollData(empPayrollDTO);
 		ResponseDTO respDTO = new ResponseDTO("Created Employee Data ", employeePayrollData);
 		return new ResponseEntity<ResponseDTO> (respDTO, HttpStatus.OK);
