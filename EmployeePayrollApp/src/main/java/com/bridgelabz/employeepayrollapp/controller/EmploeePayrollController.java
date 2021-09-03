@@ -25,7 +25,7 @@ import com.bridgelabz.employeepayrollapp.service.EmployeePayrollService;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/employeepayrollservice")
+@RequestMapping("/employeepayroll")
 @Slf4j
 public class EmploeePayrollController 
 {
