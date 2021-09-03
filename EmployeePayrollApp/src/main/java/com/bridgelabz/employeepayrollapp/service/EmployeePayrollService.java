@@ -17,7 +17,7 @@ public class EmployeePayrollService implements IEmployeePayrollServices{
 	private EmployeePayrollRepository employeeReposetory;
 	
 	/**
-	 * @return list of employee information from DB in JSON format
+	 * @return list of employee information from DB 
 	 */
 	@Override
 	public List<EmployeePayrollData> getEmployeePayrollData() {
@@ -26,7 +26,7 @@ public class EmployeePayrollService implements IEmployeePayrollServices{
 
 	/**
 	 * @param empId - represents employee id
-	 * @return employee information with same empId in JSON format
+	 * @return employee information with same empId 
 	 */
 	@Override
 	public EmployeePayrollData getEmployeePayrollDataById(int empId) {
@@ -37,7 +37,7 @@ public class EmployeePayrollService implements IEmployeePayrollServices{
 	}
 
 	/**
-	 * accepts the employee data in JSON format and stores it in DB
+	 * accepts the employee data in the form of EmployeePayrollDTO and stores it in DB
 	 * @param empPayrollDTO - represents object of EmployeePayrollDTO class
 	 * @return accepted employee information in JSON format
 	 */
@@ -49,7 +49,8 @@ public class EmployeePayrollService implements IEmployeePayrollServices{
 	}
 
 	/**
-	 * accepts the employee data in JSON format and updates the employee having same empId from database
+	 * accepts the employee data in the form of EmployeePayrollDTO and 
+	 * updates the employee having same empId from database
 	 * @param empId - represents employee id
 	 * @param empPayrollDTO - represents object of EmployeePayrollDTO class
 	 * @return	updated employee information in JSON format
